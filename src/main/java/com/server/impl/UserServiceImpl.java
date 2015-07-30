@@ -1,6 +1,8 @@
 package com.server.impl;
 
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
 import javax.swing.Spring;
 
 import org.springframework.ejb.interceptor.SpringBeanAutowiringInterceptor;
@@ -8,6 +10,7 @@ import org.springframework.ejb.interceptor.SpringBeanAutowiringInterceptor;
 import com.server.IUserService;
 
 @WebService(endpointInterface="com.server.IUserService",serviceName="UserService",portName="UserServicePort")
+@SOAPBinding(style=Style.RPC)
 public class UserServiceImpl  implements IUserService {
 
 	@Override

@@ -14,9 +14,10 @@
 	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<bean id="UserService" class="com.server.impl.UserServiceImpl" />
+	<bean name="UserService" class="com.server.impl.UserServiceImpl" />
 
-	<jaxws:endpoint implementorClass="com.server.impl.UserServiceImpl" address="/userservice"/>
+
+	<jaxws:endpoint implementor="#UserService" address="/userservice" />
 
 
 </beans>
